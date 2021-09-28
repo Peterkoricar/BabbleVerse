@@ -26,3 +26,17 @@ Hlavna vec je umožnenie písanie v skupine kde sa da na jednotlívé správy re
 - Témy by boli dobre rozdeléné podla farby odvijajúcej aktivitu a počet správ.
 - Možne zobrazenie štatistiky aktivity použivateľov v skupine.
 - Dobre zobrazenie novej správy ktorá je rozlišená podla danej témy alebo podtémy ďalšej témy a podtémy podtémy atď..
+
+# Prvý štvrťrok
+- Prihlasovanie
+- Databáza užívateľov
+- Základný dizajn
+- Posielanie správ
+- Vytváranie skupín
+- Vetvenie konverzácie
+
+# Druhý štvrťrok
+- Update dizajnu
+- Upozornenia na správy
+- Navigácia v skupine
+- Čas odoslania správy
