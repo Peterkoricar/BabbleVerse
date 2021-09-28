@@ -39,4 +39,5 @@ Hlavna vec je umožnenie písanie v skupine kde sa da na jednotlívé správy re
 - Update dizajnu
 - Upozornenia na správy
 - Navigácia v skupine
-- Čas odoslania správy
+
+
