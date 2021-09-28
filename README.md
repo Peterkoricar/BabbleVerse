@@ -5,7 +5,7 @@ Je aplikácia, ktorá slúži na normálne chatovanie s kamarátmi, ale aj na pr
 # Členovia tímu
 Šimon Čanecký (FE, dizajn) 
 Simon Heglasík (BE, FE assist , spring security)
-Martin Jaroš (BE, FL - flakač)
+Martin Jaroš (BE)
 Peter Koričár(BE, FE assist, git management)
 
 # Ciele
