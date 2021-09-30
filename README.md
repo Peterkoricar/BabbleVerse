@@ -32,15 +32,17 @@ Hlavna vec je umožnenie písanie v skupine kde sa da na jednotlívé správy re
 - Databáza užívateľov
 - Základný dizajn
 - Posielanie správ
-- Vytváranie skupín
 
 # Druhý štvrťrok
+- Vytváranie skupín
 - Vetvenie konverzácie
 - Update dizajnu
 - Upozornenia na správy
 - Navigácia v skupine
 
 # Tretí štvrťrok
-
+- Hierarchia uživatelov
+- Možnosť hlasovanie v ankete a iné vychytávky
+- Posielanie fotografií , videi atď...
 
 
