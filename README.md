@@ -41,6 +41,7 @@ Hlavna vec je umožnenie písanie v skupine kde sa da na jednotlívé správy re
 - Navigácia v skupine
 
 # Tretí štvrťrok
+- Rodokmeň správ
 - Hierarchia uživatelov
 - Možnosť hlasovanie v ankete a iné vychytávky
 - Posielanie fotografií , videi atď...
