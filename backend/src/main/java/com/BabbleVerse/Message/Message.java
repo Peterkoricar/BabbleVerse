@@ -1,8 +1,7 @@
-package Message;
+package com.BabbleVerse.Message;
 
 
 import com.BabbleVerse.User.User;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.*;
 
@@ -13,17 +12,22 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String message;
-    private User sender;
+    private String sender;
     @ManyToOne
-
+    @JoinColumn(name = "user_id")
     private User user;
-
+    @Column(name = "user_id")
     private long  userId;
 
-    public Message(long id, String message, User sender) {
+
+    protected Message(long id, String message, String sender) {
         this.id = id;
         this.message = message;
         this.sender = sender;
+    }
+
+    public Message() {
+
     }
 
     public long getId() {
@@ -42,11 +46,11 @@ public class Message {
         this.message = message;
     }
 
-    public User getSender() {
+    public String getSender() {
         return sender;
     }
 
-    public void setSender(User sender) {
+    public void setSender(String sender) {
         this.sender = sender;
     }
 

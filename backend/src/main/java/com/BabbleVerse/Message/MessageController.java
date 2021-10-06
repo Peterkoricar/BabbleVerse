@@ -1,6 +1,6 @@
-package Message;
+package com.BabbleVerse.Message;
 
-import com.BabbleVerse.User.UserService;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
