@@ -14,4 +14,8 @@ public class MessageController {
     public MessageController(){
 
     }
+    @PostMapping
+    public void messageSendTime(Message message){
+        message.getMessageSendTime();
+    }
 }

@@ -10,8 +10,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public User getUser(@PathVariable long id){
         return userService.getUser(id);
     }
+
 }
