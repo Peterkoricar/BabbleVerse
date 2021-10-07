@@ -1,5 +1,6 @@
 package com.BabbleVerse.Message;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ public class MessageController {
 
     }
     @PostMapping
-    public void messageSendTime(Message message){
-        message.getMessageSendTime();
+    public void messageSendTime(@PathVariable Message message){
+        message.getSendTime();
     }
 }

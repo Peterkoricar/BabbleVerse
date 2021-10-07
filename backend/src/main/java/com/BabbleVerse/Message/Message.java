@@ -13,7 +13,7 @@ public class Message {
     private long id;
     private String message;
     private String sender;
-    private String messageSendTime;
+    private String sendTime;
     @ManyToOne
     @JoinColumn(name = "user_id",insertable = false, updatable=false)
     private User user;
@@ -21,11 +21,11 @@ public class Message {
     private long  userId;
 
 
-    protected Message(long id, String message, String sender, String messageSendTime) {
+    protected Message(long id, String message, String sender, String sendTime) {
         this.id = id;
         this.message = message;
         this.sender = sender;
-        this.messageSendTime = messageSendTime;
+        this.sendTime = sendTime;
     }
 
     public Message() {
@@ -72,11 +72,11 @@ public class Message {
         this.userId = userId;
     }
 
-    public String getMessageSendTime() {
-        return messageSendTime;
+    public String getSendTime() {
+        return sendTime;
     }
 
-    public void setMessageSendTime(String messageSendTime) {
-        this.messageSendTime = messageSendTime;
+    public void setSendTime(String sendTime) {
+        this.sendTime = sendTime;
     }
 }
