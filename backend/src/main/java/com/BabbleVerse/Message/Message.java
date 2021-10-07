@@ -14,7 +14,7 @@ public class Message {
     private String message;
     private String sender;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id",insertable = false, updatable=false)
     private User user;
     @Column(name = "user_id")
     private long  userId;

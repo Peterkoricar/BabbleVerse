@@ -11,5 +11,7 @@ public class MessageController {
 
         this.messageService=messageService;
     }
+    public MessageController(){
 
+    }
 }
