@@ -1,17 +1,19 @@
 package com.BabbleVerse.User;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
-    private String nickname;
+    private String name;
     private String password;
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
 
 
     public long getId() {
@@ -22,12 +24,12 @@ public class User {
         this.id = id;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getName() {
+        return name;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setName(String nickname) {
+        this.name = nickname;
     }
 
     public String getPassword() {
