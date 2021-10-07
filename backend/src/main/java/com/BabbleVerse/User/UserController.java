@@ -1,6 +1,6 @@
 package com.BabbleVerse.User;
 
-import com.BabbleVerse.Security.UserExistsException;
+import com.BabbleVerse.Security.UserExistException;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -19,7 +19,7 @@ public class UserController {
     }
 
     @RequestMapping("/saveUser")
-    public void saveUser(@RequestBody User user) throws UserExistsException {
+    public void saveUser(@RequestBody User user) throws UserExistException {
         userService.registerNewUser(user);
     }
 

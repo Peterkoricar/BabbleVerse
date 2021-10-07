@@ -1,8 +1,8 @@
 package com.BabbleVerse.Security;
 import org.springframework.security.core.AuthenticationException;
 
-public class UserExistsException extends AuthenticationException {
-    public UserExistsException(final String msg) {
+public class UserExistException extends AuthenticationException {
+    public UserExistException(final String msg) {
         super(msg);
     }
 }
