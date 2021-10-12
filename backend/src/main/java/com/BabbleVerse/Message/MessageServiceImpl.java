@@ -20,7 +20,7 @@ Message message;
 
     public void saveMessage(Message message){
         Date date = new Date();
-        message.setSendTime(date.toString());
+        message.setSendTime(date);
         messageRepository.save(message);
     }
 }

@@ -4,6 +4,7 @@ package com.BabbleVerse.Message;
 import com.BabbleVerse.User.User;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "Messages")
@@ -13,13 +14,13 @@ public class Message {
     private long id;
     private String message;
     private String sender;
-    private String sendTime;
+    private Date sendTime;
     @ManyToOne
     @JoinColumn(name = "user_id",insertable = false, updatable=false)
     private User user;
 
 
-    protected Message(long id, String message, String sender, String sendTime) {
+    protected Message(long id, String message, String sender, Date sendTime) {
         this.id = id;
         this.message = message;
         this.sender = sender;
@@ -62,11 +63,11 @@ public class Message {
         this.user = user;
     }
 
-    public String getSendTime() {
+    public Date getSendTime() {
         return sendTime;
     }
 
-    public void setSendTime(String sendTime) {
+    public void setSendTime(Date sendTime) {
         this.sendTime = sendTime;
     }
 }
