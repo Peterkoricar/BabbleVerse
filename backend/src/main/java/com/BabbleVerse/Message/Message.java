@@ -17,8 +17,6 @@ public class Message {
     @ManyToOne
     @JoinColumn(name = "user_id",insertable = false, updatable=false)
     private User user;
-    @Column(name = "user_id")
-    private long  userId;
 
 
     protected Message(long id, String message, String sender, String sendTime) {
@@ -62,14 +60,6 @@ public class Message {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
     }
 
     public String getSendTime() {
