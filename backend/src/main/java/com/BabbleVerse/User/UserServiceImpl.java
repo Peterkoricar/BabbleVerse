@@ -1,6 +1,6 @@
 package com.BabbleVerse.User;
 
-import com.BabbleVerse.Security.UserExistsException;
+import com.BabbleVerse.Security.UserExistException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void registerNewUser(User user) {
-        if (nameExist(user)) throw new UserExistsException("User with name: " + user.getName() + " already exists");
+        if (nameExist(user)) throw new UserExistException("User with name: " + user.getName() + " already exists");
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
