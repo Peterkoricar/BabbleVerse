@@ -10,7 +10,7 @@ import { tap } from 'rxjs/operators';
 })
 export class AppService {
 
-  private appUrl = 'http://localhost:8080/api/goals';
+  private appUrl = 'http://localhost:8080/';
   token!: string
 
   httpOptions = {
@@ -29,8 +29,8 @@ export class AppService {
     return !!this.token;
   }
 
-  login(username: string, password: string): Observable<any> {
-    const info = btoa(`${username}:${password}`);
+  login(name: string, password: string): Observable<any> {
+    const info = btoa(`${name}:${password}`);
     const token = `Basic ${info}`;
     const options = {
       headers: new HttpHeaders({
@@ -39,7 +39,7 @@ export class AppService {
       }),
       withCredentials: true
     };
-    return this.httpClient.get('http://localhost:8080/user', options).pipe(
+    return this.httpClient.get('http://localhost:8080/getUser', options).pipe(
       tap(() => this.token = token)
     );
   }
@@ -48,9 +48,9 @@ export class AppService {
     //this.token = null;
   }
 
-  register(username: string, password: string, name: string, surname: string): Observable<any> {
-    const user = { username, password, name, surname };
-    return this.http.post(`${this.appUrl}/registration`, user);
+  register(name: string, password: string): Observable<any> {
+    const user = { name, password };
+    return this.http.post(`${this.appUrl}saveUser`, user);
   }
 
   getUsers(): Observable<User[]> {

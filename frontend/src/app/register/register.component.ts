@@ -11,21 +11,19 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   hide = true;
-  email = new FormControl('', [Validators.required, Validators.email]);
+  /*email = new FormControl('', [Validators.required, Validators.email]);*/
   registerGroup = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
     name: new FormControl('', Validators.required),
-    surname: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   });
 
-  getErrorMessage() {
+  /*getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';
     }
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
+  }*/
 
   constructor(
     private appService: AppService,
@@ -37,13 +35,11 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     if (this.registerGroup.valid) {
-      const username = this.registerGroup.value.username;
       const password = this.registerGroup.value.password;
       const name = this.registerGroup.value.name;
-      const surname = this.registerGroup.value.surname;
-      this.appService.register(username, password, name, surname)
+      this.appService.register(name, password)
         .subscribe(() => {
-          this.appService.login(username, password)
+          this.appService.login(name, password)
             .subscribe(() => this.router.navigateByUrl('/login'));
         });
     }
