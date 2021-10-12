@@ -23,7 +23,7 @@ public class UserController {
         userService.registerNewUser(user);
     }
 
-    @GetMapping("/getUser")
+    @GetMapping("/getUserByName")
     public User getUser(@RequestBody String s) {
         return userService.getUserByName(s);
     }
