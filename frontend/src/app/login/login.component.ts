@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   hide = true;
   loginGroup = new FormGroup({
-    username: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   });
 
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     private readonly appService: AppService,
     private readonly router: Router) { }
 
-    username!: string; // vymazat po teste
+    name!: string; // vymazat po teste
     password!: string; //
 
   ngOnInit() {
@@ -29,13 +29,13 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     if (this.loginGroup.valid) {
-      const username = this.loginGroup.value.username;
+      const name = this.loginGroup.value.name;
       const password = this.loginGroup.value.password;
-      this.appService.login(username, password)
+      this.appService.login(name, password)
         .subscribe(() => this.router.navigateByUrl('/homepage'));
     }
     else {
-      alert("Username or password are invalid");
+      alert("Name or password are invalid");
     }
     /*login() : void {
       if(this.username == 'admin' && this.password == 'admin'){
