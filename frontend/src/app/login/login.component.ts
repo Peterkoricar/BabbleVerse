@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  name = ''; // test
+  password = ''; // test
+  
   hide = true;
   loginGroup = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -21,13 +24,11 @@ export class LoginComponent implements OnInit {
     private readonly appService: AppService,
     private readonly router: Router) { }
 
-    name!: string; // vymazat po teste
-    password!: string; //
 
   ngOnInit() {
   }
 
-  login(): void {
+  /*login(): void {
     if (this.loginGroup.valid) {
       const name = this.loginGroup.value.name;
       const password = this.loginGroup.value.password;
@@ -36,15 +37,16 @@ export class LoginComponent implements OnInit {
     }
     else {
       alert("Name or password are invalid");
-    }
-    /*login() : void {
-      if(this.username == 'admin' && this.password == 'admin'){
+    }*/
+    
+    login() : void {
+      if(this.name == 'admin' && this.password == 'admin'){
        this.router.navigate(["homepage"]);}
-      else if (this.username == 'user' && this.password == 'user'){
+      else if (this.name == 'user' && this.password == 'user'){
       this.router.navigate(["homepage"]);}
       else {
         alert("Username or password are invalid");
-      }*/
+      }
   }
 
 }

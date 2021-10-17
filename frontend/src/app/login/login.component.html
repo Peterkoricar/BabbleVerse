@@ -10,14 +10,14 @@
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input matInput formControlName="name" placeholder="Name" name="name" required>
+                                <input matInput formControlName="name" placeholder="Name" name="name" [(ngModel)]="name" required>
                             </mat-form-field>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <mat-form-field class="example-full-width">
-                                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="Password" type="password" name="password" required>
+                                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
                                 <button style="margin-right: -55px;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                 </button>
