@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
 import { Router } from '@angular/router';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -28,25 +29,26 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  /*login(): void {
+  login(): void {
     if (this.loginGroup.valid) {
       const name = this.loginGroup.value.name;
       const password = this.loginGroup.value.password;
-      this.appService.login(name, password)
+      var user : User = {name : name , password : password} as User;
+      this.appService.login(user)
         .subscribe(() => this.router.navigateByUrl('/homepage'));
     }
     else {
       alert("Name or password are invalid");
-    }*/
+    }
     
-    login() : void {
+    /*login() : void {
       if(this.name == 'admin' && this.password == 'admin'){
        this.router.navigate(["homepage"]);}
       else if (this.name == 'user' && this.password == 'user'){
       this.router.navigate(["homepage"]);}
       else {
         alert("Username or password are invalid");
-      }
+      }*/
   }
 
 }

@@ -29,17 +29,18 @@ export class AppService {
     return !!this.token;
   }
 
-  login(name: string, password: string): Observable<any> {
-    const info = btoa(`${name}:${password}`);
+  login(user : User): Observable<any> {
+    const info = btoa(`${user.name}:${user.password}`);
+    const name = user.name;
     const token = `Basic ${info}`;
-    const options = {
+    const options = { 
       headers: new HttpHeaders({
         Authorization: token,
         'X-Requested-With' : 'XMLHttpRequest'
       }),
       withCredentials: true
     };
-    return this.httpClient.get('http://localhost:8080/getUser', options).pipe(
+    return this.httpClient.get('http://localhost:8080/loginUser', options).pipe(
       tap(() => this.token = token)
     );
   }
@@ -48,10 +49,10 @@ export class AppService {
     //this.token = null;
   }
 
-  register(name: string, password: string): Observable<any> {
-    const user = { name, password };
-    return this.http.post(`${this.appUrl}saveUser`, user);
+  register(user : User): Observable<any> {
+    return this.http.post(`${this.appUrl}postUser`, user);
   }
+  
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.appUrl);

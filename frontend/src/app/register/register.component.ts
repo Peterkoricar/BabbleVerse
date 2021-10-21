@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { AppService } from '../app.service';
 import { Router } from '@angular/router';
+import { User } from '../user';
 
 @Component({
   selector: 'app-register',
@@ -37,11 +38,9 @@ export class RegisterComponent implements OnInit {
     if (this.registerGroup.valid) {
       const password = this.registerGroup.value.password;
       const name = this.registerGroup.value.name;
-      this.appService.register(name, password)
-        .subscribe(() => {
-          this.appService.login(name, password)
-            .subscribe(() => this.router.navigateByUrl('/login'));
-        });
+      var user : User = {name : name , password : password} as User;
+      this.appService.register(user)
+        .subscribe();
     }
   }
 }
