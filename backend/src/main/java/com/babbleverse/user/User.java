@@ -1,11 +1,11 @@
-package com.BabbleVerse.User;
+package com.babbleverse.user;
 
 import javax.persistence.*;
 
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
     private String name;
     private String password;
