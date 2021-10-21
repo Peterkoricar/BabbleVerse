@@ -1,12 +1,13 @@
-package com.BabbleVerse.User;
+package com.babbleverse.user;
 
-import com.BabbleVerse.Security.UserExistException;
+import com.babbleverse.security.UserExistException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.babbleverse.user.UserService;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements com.babbleverse.user.UserService {
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
 
@@ -16,7 +17,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(long id) {
+    public com.babbleverse.user.User getUser(long id) {
         return userRepository.findById(id).get();
     }
 

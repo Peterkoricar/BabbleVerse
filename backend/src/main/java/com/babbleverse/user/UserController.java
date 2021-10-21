@@ -1,6 +1,7 @@
-package com.BabbleVerse.User;
+package com.babbleverse.user;
 
-import com.BabbleVerse.Security.UserExistException;
+import com.babbleverse.security.UserExistException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -19,14 +20,14 @@ public class UserController {
         return userService.getUser(id);
     }
 
-    @RequestMapping("/saveUser")
+    @RequestMapping("/postUser")
     public void saveUser(@RequestBody User user) throws UserExistException {
         userService.registerNewUser(user);
     }
 
-    @GetMapping("/getUserByName")
-    public User getUser(@RequestBody String s) {
-        return userService.getUserByName(s);
+    @GetMapping("/loginUser")
+    public User getUser() {
+      return userService.getCurrentUser();
     }
 
     @RequestMapping("/user")

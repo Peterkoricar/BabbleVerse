@@ -1,4 +1,5 @@
-package com.BabbleVerse.User;
+package com.babbleverse.user;
+
 
 import org.springframework.data.repository.CrudRepository;
 
