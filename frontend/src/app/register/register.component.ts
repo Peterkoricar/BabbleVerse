@@ -40,7 +40,10 @@ export class RegisterComponent implements OnInit {
       const name = this.registerGroup.value.name;
       var user : User = {name : name , password : password} as User;
       this.appService.register(user)
-        .subscribe();
+        .subscribe(() => {
+          this.appService.login(user)
+            .subscribe(() => this.router.navigateByUrl('/login'));
+        });
     }
   }
 }
