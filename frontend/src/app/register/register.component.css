@@ -1,11 +1,12 @@
 .register{
-    height: 450px;
-    width: 500px;
+    width: 250px;
     margin: auto;
+    margin-top: 130px;
+    padding-top: 50px;
+    padding-bottom: 65px;
+    padding-left: 75px;
     background-color: rgb(31, 169, 224);;
     border-radius: 10px;
-    margin-top: 130px;
-    margin-bottom: 50px;
 }
 
 button{
@@ -22,16 +23,9 @@ button:hover{
     margin-left: 35px;
     color: white;
     font-size: xx-large;
-    padding-top: 30px;
 }
 
 .input{
-    margin-top: 25px;
-    margin-left: 30px;
-}
-
-.signbtn{
-    position: absolute;
-    margin-left: -400px;
-    margin-top: 100px;
+    color: black;
+    margin: 5px 0px;
 }
