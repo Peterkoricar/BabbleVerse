@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebSocketAPI } from '../WebSocketAPI';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  webSocketAPI!: WebSocketAPI;
+  greeting: any;
+  name!: string;
+  ngOnInit() {
+    this.webSocketAPI = new WebSocketAPI(new HomepageComponent());
 
-  ngOnInit(): void {
+  }
+
+  connect(){
+    this.webSocketAPI._connect();
+  }
+
+  disconnect(){
+    this.webSocketAPI._disconnect();
+  }
+
+  sendMessage(){
+    this.webSocketAPI._send(this.name);
+  }
+
+  handleMessage(message: any){
+    this.greeting = message;
   }
 
 }
