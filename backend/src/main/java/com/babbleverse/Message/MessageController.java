@@ -1,4 +1,4 @@
-package com.BabbleVerse.Message;
+package com.babbleverse.Message;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;

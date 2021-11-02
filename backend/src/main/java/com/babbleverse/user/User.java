@@ -1,4 +1,4 @@
-package com.BabbleVerse.User;
+package com.babbleverse.user;
 
 import javax.persistence.*;
 

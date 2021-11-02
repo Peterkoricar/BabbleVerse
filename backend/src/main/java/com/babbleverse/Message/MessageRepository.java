@@ -1,4 +1,4 @@
-package com.BabbleVerse.Message;
+package com.babbleverse.Message;
 
 import org.springframework.data.repository.CrudRepository;
 

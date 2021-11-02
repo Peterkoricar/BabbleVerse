@@ -1,7 +1,7 @@
-package com.BabbleVerse.Message;
+package com.babbleverse.Message;
 
 
-import com.BabbleVerse.User.User;
+import com.babbleverse.user.User;
 
 import javax.persistence.*;
 
