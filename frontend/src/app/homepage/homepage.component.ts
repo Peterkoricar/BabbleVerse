@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WebSocketAPI } from '../WebSocketAPI';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-homepage',
@@ -8,28 +8,19 @@ import { WebSocketAPI } from '../WebSocketAPI';
 })
 export class HomepageComponent implements OnInit {
 
-  webSocketAPI!: WebSocketAPI;
+  messageService!: MessageService;
   greeting: any;
   name!: string;
+  input!: string;
   ngOnInit() {
-    this.webSocketAPI = new WebSocketAPI(new HomepageComponent());
+    this.messageService = new MessageService();
 
   }
+  sendMessage() {
+    if (this.input) {
+      this.messageService.sendMessage(this.input);
+      this.input = '';
+    }
 
-  connect(){
-    this.webSocketAPI._connect();
-  }
-
-  disconnect(){
-    this.webSocketAPI._disconnect();
-  }
-
-  sendMessage(){
-    this.webSocketAPI._send(this.name);
-  }
-
-  handleMessage(message: any){
-    this.greeting = message;
-  }
-
+}
 }
