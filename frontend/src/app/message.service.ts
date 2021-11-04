@@ -17,7 +17,7 @@ export class MessageService {
         const ws = new SockJS(serverUrl);
         this.stompClient = Stomp.over(ws);
         const that = this;
-        // tslint:disable-next-line:only-arrow-functions
+        
         this.stompClient.connect({}, function(frame) {
           that.stompClient.subscribe('/message', (message) => {
             if (message.body) {

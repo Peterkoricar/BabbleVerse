@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
+import { User } from '../user';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-homepage',
@@ -8,14 +10,20 @@ import { MessageService } from '../message.service';
 })
 export class HomepageComponent implements OnInit {
 
+  constructor(
+    private readonly appService: AppService,) { }
+
+
   messageService!: MessageService;
   greeting: any;
-  name!: string;
   input!: string;
+  name!: string;
   ngOnInit() {
     this.messageService = new MessageService();
-
+    this.name = this.appService.getCurrentUser();
   }
+
+  
   sendMessage() {
     if (this.input) {
       this.messageService.sendMessage(this.input);
