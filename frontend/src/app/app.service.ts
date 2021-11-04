@@ -44,6 +44,9 @@ export class AppService {
       tap(() => this.token = token)
     );
   }
+  getCurrentUser(){
+    return this.httpClient.get('http://localhost:8080/loginUser');
+  }
 
   logout(): void {
     //this.token = null;
