@@ -1,7 +1,7 @@
 <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
 <button class="btn btn-success" (click)="sendMessage()">Send</button>
 <div class="content">
-  <div>{{name}}</div>
+  <div>{{ appService.username }}</div>
   <div *ngFor="let msg of messageService.msg">
     {{msg}}
   </div>

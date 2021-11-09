@@ -11,21 +11,22 @@ import { AppService } from '../app.service';
 export class HomepageComponent implements OnInit {
 
   constructor(
-    private readonly appService: AppService,) { }
+    public appService: AppService, public messageService: MessageService) { }
 
 
-  messageService!: MessageService;
+  
   greeting: any;
   input!: string;
-  name!: string;
+  user!: User;
+
   ngOnInit() {
-    this.messageService = new MessageService();
-    this.name = this.appService.getCurrentUser();
+   
   }
 
   
   sendMessage() {
     if (this.input) {
+      this.input = this.appService.username + ':' + this.input;
       this.messageService.sendMessage(this.input);
       this.input = '';
     }
