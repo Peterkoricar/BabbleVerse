@@ -6,7 +6,6 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-
 public class MessageController {
     /*MessageService messageService;
     public MessageController(MessageService messageService){
