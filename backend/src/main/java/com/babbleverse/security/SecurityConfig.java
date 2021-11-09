@@ -1,4 +1,4 @@
-package com.BabbleVerse.Security;
+package com.babbleverse.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -33,13 +33,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/saveUser").permitAll()
+                .antMatchers("/postUser").permitAll()
                 .anyRequest().authenticated()
-                .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/").deleteCookies("JSESSIONID")
-                .invalidateHttpSession(true)
                 .and().csrf().disable();
+
     }
 
     @Bean

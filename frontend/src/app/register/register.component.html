@@ -1,0 +1,22 @@
+<div style="height: 450px;">
+    <mat-card class="register">
+        <div class="title"><strong>Register</strong></div>
+        <form [formGroup]="registerGroup" (ngSubmit)="register()">
+            <mat-form-field hintLabel="Max 15 characters" class="input">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" #input maxlength="15" placeholder="Jozko Mrkvicka" type="text" required>
+                <mat-hint align="end">{{input.value?.length || 0}}/15</mat-hint>
+            </mat-form-field>
+            <mat-form-field  class="input" syle="width: 200px;">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" type="password" required>
+                <button mat-icon-button matSuffix style="margin-right: -55px;"  (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-card-actions>
+                <button mat-raised-button  class="signbtn" type="submit" [disabled]="!registerGroup.valid">Sign in</button>
+            </mat-card-actions>
+        </form>
+  </mat-card>
+</div>

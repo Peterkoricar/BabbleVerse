@@ -1,0 +1,21 @@
+h1{
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(31, 169, 224);
+}
+
+.logo{
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -240px;
+}
+
+.head{
+    text-align: center;
+}
+
+.heel{
+    text-align: center;
+    color: rgb(31, 169, 224);
+}
+

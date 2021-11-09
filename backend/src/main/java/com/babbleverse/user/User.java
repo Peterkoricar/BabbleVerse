@@ -1,4 +1,4 @@
-package com.BabbleVerse.User;
+package com.babbleverse.user;
 
 import javax.persistence.*;
 
@@ -14,10 +14,14 @@ public class User {
         this.name = name;
         this.password = password;
     }
+    public User(){
+
+    }
 
     public long getId() {
         return id;
     }
+
 
     public void setId(long id) {
         this.id = id;

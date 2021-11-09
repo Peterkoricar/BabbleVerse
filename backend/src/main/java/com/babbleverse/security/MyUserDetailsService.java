@@ -1,7 +1,7 @@
-package com.BabbleVerse.Security;
+package com.babbleverse.security;
 
-import com.BabbleVerse.User.User;
-import com.BabbleVerse.User.UserRepository;
+import com.babbleverse.user.User;
+import com.babbleverse.user.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

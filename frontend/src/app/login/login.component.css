@@ -1,0 +1,31 @@
+.example-card{
+    width: 250px;
+    margin: auto;
+    margin-top: 130px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    padding-left: 75px;
+    background-color: rgb(31, 169, 224);;
+    border-radius: 10px;
+}
+
+.title{
+    margin-left: 35px;
+    color: white;
+    font-size: xx-large;
+    margin-top: -30px;
+}
+
+button{
+    color: black;
+    background-color: white;
+}
+
+button:hover{
+    color: white;
+    background-color: black;
+}
+
+input{
+    color: black;
+}
