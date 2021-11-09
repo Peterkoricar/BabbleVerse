@@ -12,6 +12,7 @@ export class AppService {
 
   private appUrl = 'http://localhost:8080/';
   token!: string
+  username!: string;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -29,7 +30,7 @@ export class AppService {
     return !!this.token;
   }
 
-  login(user : User): Observable<any> {
+  login(user : User): Observable<User> {
     const info = btoa(`${user.name}:${user.password}`);
     const name = user.name;
     const token = `Basic ${info}`;
@@ -40,9 +41,16 @@ export class AppService {
       }),
       withCredentials: true
     };
-    return this.httpClient.get('http://localhost:8080/loginUser', options).pipe(
-      tap(() => this.token = token)
+    return this.httpClient.get<User>('http://localhost:8080/loginUser', options).pipe(
+      tap(user => { 
+        this.username = user.name;
+        this.token = token 
+      })
     );
+  }
+
+  getCurrentUser(){
+    return this.httpClient.get<User>('http://localhost:8080/loginUser');
   }
 
   logout(): void {

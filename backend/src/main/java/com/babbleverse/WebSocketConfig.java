@@ -12,7 +12,8 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/socket")
-                .setAllowedOrigins("*")
+
+                .setAllowedOrigins("http://localhost:4200/")
                 .withSockJS();
     }
     @Override
