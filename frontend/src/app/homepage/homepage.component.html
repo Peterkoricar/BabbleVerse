@@ -1,8 +1,13 @@
-<input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
-<button class="btn btn-success" (click)="sendMessage()">Send</button>
-<div class="content">
-  <div>{{ appService.username }}</div>
-  <div *ngFor="let msg of messageService.msg">
-    {{msg}}
-  </div>
-</div>
+<div style="height: 650px;">
+  <mat-card class="register">
+    <div class="title"><strong>Register</strong></div>
+    <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+    <button class="btn btn-success" (click)="sendMessage()">Send</button>
+    <div class="content">
+      <div>{{ appService.username }}</div>
+      <div *ngFor="let msg of messageService.msg">
+        {{msg}}
+      </div>
+    </div>
+  </mat-card>
+</div>  
