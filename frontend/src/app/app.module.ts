@@ -13,13 +13,15 @@ import { MatSliderModule } from '@angular/material/slider';
 import { CustomMaterialModule } from './material.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomepageComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

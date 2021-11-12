@@ -37,3 +37,20 @@
     border-radius: 8px;
     height: 25px;
 }
+.message{
+    background-color: rgb(31, 169, 224);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+    margin-left: 20px;
+}
+.friends{
+    margin-left: 1219px;
+    margin-top: -590px;
+    height: 880px;
+    width: 300px;
+    background-color: whitesmoke;
+    border-color: rgb(31, 169, 224) solid 5px;
+    border-radius: 20px;
+}

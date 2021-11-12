@@ -1,0 +1,15 @@
+<div id="search-component" class="search">
+    <h4><label for="search-box"><em>User Search</em></label></h4>
+  
+    <input type="text" placeholder="Search.." #searchBox id="search-box" (input)="search(searchBox.value)" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <button type="submit" class="searchbtn"><i class="fa fa-search"></i></button>
+  
+    <ul class="search-result">
+      <li *ngFor="let user of users$ | async" >
+        <a>
+          {{user.name}}
+        </a>
+      </li>
+    </ul>
+</div>

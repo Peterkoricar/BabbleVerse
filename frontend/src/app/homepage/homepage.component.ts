@@ -29,6 +29,7 @@ export class HomepageComponent implements OnInit {
 
   greeting: any;
   input!: string;
+  like!: string;
   user!: User;
 
   ngOnInit() {
@@ -38,10 +39,14 @@ export class HomepageComponent implements OnInit {
   
   sendMessage() {
     if (this.input) {
-      this.input = this.appService.username + ':' + this.input;
+      this.input = this.appService.username + ': ' + this.input;
       this.messageService.sendMessage(this.input);
       this.input = '';
     }
+  }
 
-}
+  sendLike() {
+      this.like = this.appService.username + ': ' + '👍';
+      this.messageService.sendMessage(this.like);
+  }
 }
