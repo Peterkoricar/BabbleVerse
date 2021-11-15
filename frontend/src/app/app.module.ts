@@ -15,6 +15,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProfilComponent } from './profil/profil.component';
     HomepageComponent,
     RegisterComponent,
     SearchComponent,
-    ProfilComponent
+    ProfilComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

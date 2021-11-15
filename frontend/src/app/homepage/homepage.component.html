@@ -1,32 +1,6 @@
 <div style="height: 650px;">
     <app-search></app-search>
     <app-profil></app-profil>
-  <mat-card class="chat">
-    <p>
-      <mat-toolbar class="head">
-      <span>Chat</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon style="margin-left: 200px;">favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-       <mat-icon style="margin-left: 200px;">menu</mat-icon>
-     </button>
-    </mat-toolbar>
-    </p>
-    <div style="height:205px;padding: 15px 0px;border:none;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-      <div class="content">
-        <div class="username">{{ appService.username }}</div>
-        <div class="message" *ngFor="let msg of messageService.msg">
-          {{msg}}
-        </div>
-      </div>
-    </div>
-    <mat-toolbar class="heel">
-      <input class="chatsend" type="text" placeholder="  message" [(ngModel)]="input">
-      <mat-icon style="margin-left: 5px;" class="btn" (click)="sendMessage()">send</mat-icon>
-      <mat-icon style="margin-left: 10px;" class="btn" svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon" (click)="sendLike()"></mat-icon>
-    </mat-toolbar>
-  </mat-card>
+    <app-chat></app-chat>
   <div class="friends"></div>
 </div>  

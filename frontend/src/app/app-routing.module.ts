@@ -5,7 +5,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { ProfilComponent } from './profil/profil.component';
-
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'search', component: SearchComponent },
   { path: 'profil', component: ProfilComponent },
+  { path: 'chat', component: ChatComponent },
 ];
 
 @NgModule({

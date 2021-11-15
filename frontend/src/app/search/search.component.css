@@ -56,13 +56,11 @@ ul.search-result {
 
 .searchbtn{
     margin-left: 5px;
-    border-radius: 5px;
     padding: 5px 10px;
-    background-color: rgb(31, 169, 224);
-    border: none;
+    color: rgb(31, 169, 224);
+    cursor: pointer;
 }
 
 .searchbtn:hover{
-    color: rgb(31, 169, 224);
-    background-color: white;
+    color: black;
 }
