@@ -14,6 +14,7 @@ import { CustomMaterialModule } from './material.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SearchComponent } from './search/search.component';
     LoginComponent,
     HomepageComponent,
     RegisterComponent,
-    SearchComponent
+    SearchComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

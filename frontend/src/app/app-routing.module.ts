@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
+import { ProfilComponent } from './profil/profil.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -11,6 +13,7 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'profil', component: ProfilComponent },
 ];
 
 @NgModule({
