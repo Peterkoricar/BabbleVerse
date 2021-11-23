@@ -13,6 +13,7 @@ export class AppService {
   private appUrl = 'http://localhost:8080/';
   token!: string
   username!: string;
+  email!: string;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -44,6 +45,7 @@ export class AppService {
     return this.httpClient.get<User>('http://localhost:8080/loginUser', options).pipe(
       tap(user => { 
         this.username = user.name;
+        this.email = user.email;
         this.token = token 
       })
     );
