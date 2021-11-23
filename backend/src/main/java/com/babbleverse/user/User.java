@@ -1,6 +1,9 @@
 package com.babbleverse.user;
 
+import com.babbleverse.request.Request;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -9,6 +12,12 @@ public class User {
     private long id;
     private String name;
     private String password;
+    @ManyToMany
+    @Column(name = "friends")
+    private List<User> friends;
+    @ManyToOne
+    @Column(name = "receivedRequests")
+    private List<Request> receivedRequests;
 
     public User(String name, String password) {
         this.name = name;
