@@ -15,9 +15,15 @@ public class User {
     @ManyToMany
     @Column(name = "friends")
     private List<User> friends;
-    @ManyToOne
-    @Column(name = "receivedRequests")
+
+    @OneToMany
+    @Column(name = "sent_requests")
+    private List<Request> sentRequests;
+
+    @OneToMany
+    @Column(name = "received_requests")
     private List<Request> receivedRequests;
+
 
     public User(String name, String password) {
         this.name = name;
