@@ -21,6 +21,16 @@ public class Request {
     @Column(name = "request_type")
     private RequestType requestType;
 
+    @Column(name = "request_is_active")
+    private boolean requestIsActive;
+
+    public Request(User sender, User receiver, RequestType requestType) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.requestType = requestType;
+        requestIsActive = true;
+    }
+
     public RequestType getRequestType() {
         return requestType;
     }
@@ -51,5 +61,13 @@ public class Request {
 
     public void setReceiver(User receiver) {
         this.receiver = receiver;
+    }
+
+    public boolean isRequestIsActive() {
+        return requestIsActive;
+    }
+
+    public void setRequestIsActive(boolean requestIsActive) {
+        this.requestIsActive = requestIsActive;
     }
 }

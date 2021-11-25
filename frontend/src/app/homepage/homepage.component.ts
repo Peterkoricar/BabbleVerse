@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../message.service';
+import { MessageService } from al;
 import { User } from '../user';
 import { AppService } from '../app.service';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -23,7 +23,7 @@ const THUMBUP_ICON =
 export class HomepageComponent implements OnInit {
 
   constructor(
-    public appService: AppService, public messageService: MessageService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) { 
+    public appService: AppService, public messageService: MessageService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
       iconRegistry.addSvgIconLiteral('thumbs-up', sanitizer.bypassSecurityTrustHtml(THUMBUP_ICON));
     }
 
@@ -32,10 +32,10 @@ export class HomepageComponent implements OnInit {
   user!: User;
 
   ngOnInit() {
-   
+
   }
 
-  
+
   sendMessage() {
     if (this.input) {
       this.input = this.appService.username + ':' + this.input;
