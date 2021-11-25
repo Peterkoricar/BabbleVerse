@@ -24,9 +24,7 @@ public class Request {
     @Column(name = "request_is_active")
     private boolean requestIsActive;
 
-    public Request(User sender, User receiver, RequestType requestType) {
-        this.sender = sender;
-        this.receiver = receiver;
+    public Request(RequestType requestType) {
         this.requestType = requestType;
         requestIsActive = true;
     }

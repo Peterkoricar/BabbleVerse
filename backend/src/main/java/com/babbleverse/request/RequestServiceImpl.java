@@ -21,7 +21,10 @@ public class RequestServiceImpl implements RequestService{
 
     @Override
     public Request createNewRequest(User sender, User receiver, RequestType requestType) {
-        return requestRepository.save(new Request(sender,receiver,requestType));
+        Request request = new Request(requestType);
+        sender.addSentRequest(request);
+        receiver.addReceivedRequest(request);
+        return requestRepository.save(request);
     }
 
     @Override
