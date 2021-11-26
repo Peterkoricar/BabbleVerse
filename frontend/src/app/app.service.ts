@@ -3,6 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { User } from './user';
 import { tap } from 'rxjs/operators';
+import { UserRequest } from './requests/request';
+
+
+
 
 
 @Injectable({
@@ -64,5 +68,11 @@ export class AppService {
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.appUrl);
+  }
+
+  //testing
+  createRequest( reciever : User){
+    var sender : User  // = getCurrentUser();
+    var request : UserRequest = { sender, reciever : reciever, requestType : UserRequestType.friendRequest }
   }
 }

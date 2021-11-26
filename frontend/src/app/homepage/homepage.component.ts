@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from al;
 import { User } from '../user';
 import { AppService } from '../app.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
+import { MessageService } from '../message.service';
 
 const THUMBUP_ICON =
   `
@@ -42,6 +42,9 @@ export class HomepageComponent implements OnInit {
       this.messageService.sendMessage(this.input);
       this.input = '';
     }
-
-}
+  }
+  //reqeust
+  sendFriendRequest(){
+      
+  }
 }
