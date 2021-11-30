@@ -1,7 +1,7 @@
 .search{
     position: absolute;
     margin-top: -205px;
-    margin-left: 1650px;
+    margin-left: 1250px; /*pc: 1650px, nb: 1250px */
 }
 
 h4{
