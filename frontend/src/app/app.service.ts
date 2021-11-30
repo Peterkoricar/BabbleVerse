@@ -13,6 +13,7 @@ import { UserRequest } from './requests/request';
   providedIn: 'root'
 })
 export class AppService {
+  [x: string]: any;
 
   private appUrl = 'http://localhost:8080/';
   token!: string
@@ -72,7 +73,9 @@ export class AppService {
 
   //testing
   createRequest( reciever : User){
-    var sender : User  // = getCurrentUser();
-    var request : UserRequest = { sender, reciever : reciever, requestType : UserRequestType.friendRequest }
+    this.getCurrentUser().subscribe(sender=> {
+      var request : UserRequest = { sender : sender, reciever : reciever, requestType : UserRequestType.friendRequest }
+      this.http.post<Request>(`${this.appUrl}newRequest`, request)
+    })
   }
 }
