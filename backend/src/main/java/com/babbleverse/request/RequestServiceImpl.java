@@ -34,6 +34,7 @@ public class RequestServiceImpl implements RequestService{
             case groupInvite:
 
             case friendRequest:
+                request.getSender().addFriend(request.getReceiver());
         }
     }
 

@@ -67,6 +67,9 @@ public class User {
     public void setFriends(List<User> friends) {
         this.friends = friends;
     }
+    public void addFriend(User user){
+        this.friends.add(user);
+    }
 
     public List<Request> getSentRequests() {
         return sentRequests;
