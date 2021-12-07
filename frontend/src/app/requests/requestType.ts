@@ -1,4 +1,4 @@
-enum UserRequestType{
+ export enum UserRequestType{
     friendRequest,
     groupInvite,
 }

@@ -4,10 +4,7 @@ import { Observable, of } from 'rxjs';
 import { User } from './user';
 import { tap } from 'rxjs/operators';
 import { UserRequest } from './requests/request';
-
-
-
-
+import { UserRequestType } from './requests/requestType';
 
 @Injectable({
   providedIn: 'root'
