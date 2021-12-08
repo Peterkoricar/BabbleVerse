@@ -12,10 +12,19 @@ import { User } from '../user';
 export class RegisterComponent implements OnInit {
 
   hide = true;
+  email = new FormControl('', [Validators.required, Validators.email]);
   registerGroup = new FormGroup({
     name: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
+
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'You must enter a value';
+    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
 
   constructor(
     private appService: AppService,
