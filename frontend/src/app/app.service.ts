@@ -65,4 +65,11 @@ export class AppService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.appUrl);
   }
+
+  searchUsers(term: string): Observable<User[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<User[]>(`${this.appUrl}/?name=${term}`)
+  }  
 }
