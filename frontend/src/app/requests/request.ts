@@ -1,4 +1,5 @@
 import { User } from "../user";
+import { UserRequestType } from "./requestType";
 
 
 export interface UserRequest{
