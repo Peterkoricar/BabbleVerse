@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from '../message.service';
 import { User } from '../user';
 import { AppService } from '../app.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
-import { MessageService } from '../message.service';
 
 const THUMBUP_ICON =
   `
@@ -16,35 +16,37 @@ const THUMBUP_ICON =
 `;
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  selector: 'app-chat',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.css']
 })
-export class HomepageComponent implements OnInit {
+export class ChatComponent implements OnInit {
 
   constructor(
-    public appService: AppService, public messageService: MessageService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    public appService: AppService, public messageService: MessageService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) { 
       iconRegistry.addSvgIconLiteral('thumbs-up', sanitizer.bypassSecurityTrustHtml(THUMBUP_ICON));
     }
 
   greeting: any;
   input!: string;
+  like!: string;
   user!: User;
 
   ngOnInit() {
-
+   
   }
 
-
+  
   sendMessage() {
     if (this.input) {
-      this.input = this.appService.username + ':' + this.input;
+      this.input = this.appService.username + ': ' + this.input;
       this.messageService.sendMessage(this.input);
       this.input = '';
     }
   }
-  //reqeust
-  sendFriendRequest(){
 
+  sendLike() {
+      this.like = this.appService.username + ': ' + '👍';
+      this.messageService.sendMessage(this.like);
   }
 }

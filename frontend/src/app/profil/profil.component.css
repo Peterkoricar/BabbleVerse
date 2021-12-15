@@ -1,0 +1,37 @@
+.profilimg{
+  position: absolute;
+  margin-top: -185px;
+  margin-left: 27px;
+  cursor: pointer;
+}
+
+.username{
+  position: absolute;
+  margin-top: -185px;
+  margin-left: 75px;
+  color: black;
+  font-size: large;
+  cursor: pointer;
+}
+
+.username:hover{
+  color: rgb(31, 169, 224);
+}
+
+.logout{
+  position: absolute;
+  margin-top: -163px;
+  margin-left: 76px;
+  color: black;
+  font-size: small;
+  cursor: pointer;
+}
+
+.logout:hover{
+  color: rgb(31, 169, 224);
+  text-decoration: underline;
+}
+
+.logprofil{
+  text-align: left;
+}

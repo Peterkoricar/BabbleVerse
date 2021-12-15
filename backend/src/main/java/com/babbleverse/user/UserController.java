@@ -1,10 +1,13 @@
 package com.babbleverse.user;
 
 import com.babbleverse.security.UserExistException;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.data.repository.query.Param;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200/")
@@ -33,5 +36,18 @@ public class UserController {
     @RequestMapping("/user")
     public User user(Principal user) {
         return new User(user.getName(), null);
+    }
+    @GetMapping("/finduser")
+    public Optional<User> findUserByName(@PathVariable String name){
+        return userService.findUserByName(name);
+
+    }
+    @RequestMapping("/")
+    public String viewHomePage(Model model, @Param("keyword") String keyword) {
+        List<User> listUsers = userService.listAll(keyword);
+        model.addAttribute("listUsers", listUsers);
+        model.addAttribute("keyword", keyword);
+
+        return "index";
     }
 }
