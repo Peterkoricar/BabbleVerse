@@ -18,4 +18,8 @@ public class RequestController {
     private Request createRequest(@RequestBody Request request){
         return requestService.createNewRequest(request.getSender(),request.getReceiver(),request.getRequestType());
     }
+
+    private void sendRequest(@RequestBody Request request){
+
+    }
 }

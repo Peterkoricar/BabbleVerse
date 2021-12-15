@@ -2,9 +2,10 @@ package com.babbleverse.request;
 
 import com.babbleverse.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
-
+@Component
 public class RequestServiceImpl implements RequestService{
 
     private RequestRepository requestRepository;
@@ -35,6 +36,7 @@ public class RequestServiceImpl implements RequestService{
 
             case friendRequest:
                 request.getSender().addFriend(request.getReceiver());
+                System.console().printf(request.getSender().getFriends().toString());
         }
     }
 
