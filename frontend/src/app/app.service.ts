@@ -68,11 +68,17 @@ export class AppService {
     return this.http.get<User[]>(this.appUrl);
   }
 
-  //testing
-  createRequest( reciever : User){
-    this.getCurrentUser().subscribe(sender=> {
-      var request : UserRequest = { sender : sender, reciever : reciever, requestType : UserRequestType.friendRequest }
-      this.http.post<Request>(`${this.appUrl}newRequest`, request)
-    })
+  searchUsers(term: string): Observable<User[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<User[]>(`${this.appUrl}/?name=${term}`)
   }
+  //testing
+    createRequest( reciever : User){
+      this.getCurrentUser().subscribe(sender=> {
+        var request : UserRequest = { sender : sender, reciever : reciever, requestType : UserRequestType.friendRequest }
+        this.http.post<Request>(`${this.appUrl}newRequest`, request)
+      })
+    }
 }
