@@ -34,7 +34,6 @@ export class AppService {
 
   login(user : User): Observable<User> {
     const info = btoa(`${user.name}:${user.password}`);
-    const name = user.name;
     const token = `Basic ${info}`;
     const options = {
       headers: new HttpHeaders({
