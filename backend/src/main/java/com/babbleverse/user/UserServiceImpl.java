@@ -22,11 +22,9 @@ public class UserServiceImpl implements com.babbleverse.user.UserService {
     }
 
     @Override
-    public com.babbleverse.user.User getUser(long id) {
-        return userRepository.findById(id).get();
+    public Optional<User> getUser(long id) {
+        return userRepository.findById(id);
     }
-
-
 
     @Override
     public boolean nameExist(User user) {

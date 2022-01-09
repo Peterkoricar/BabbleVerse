@@ -20,7 +20,7 @@ public class UserController {
 
     @GetMapping("/getUser")
     public User getUser(@PathVariable long id){
-        return userService.getUser(id);
+        return userService.getUser(id).orElseThrow();
     }
 
     @RequestMapping("/postUser")

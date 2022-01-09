@@ -7,7 +7,7 @@ import java.util.Optional;
 
 @Service
 public interface UserService {
-    User getUser(long id);
+    Optional<User> getUser(long id);
     boolean nameExist(User user);
     void registerNewUser(User user);
     User getCurrentUser();
