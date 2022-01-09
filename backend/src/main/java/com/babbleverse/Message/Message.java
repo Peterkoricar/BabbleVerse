@@ -20,7 +20,7 @@ public class Message {
     private long  userId;
 
 
-    protected Message(long id, String message, String sender) {
+    private Message(long id, String message, String sender) {
         this.id = id;
         this.message = message;
         this.sender = sender;
