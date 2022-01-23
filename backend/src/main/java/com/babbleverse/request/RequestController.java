@@ -22,4 +22,9 @@ public class RequestController {
     private void sendRequest(@RequestBody Request request){
 
     }
+
+    @PostMapping("/acceptRequest")
+    private void requestAccepted(@RequestBody Request request){
+        requestService.requestAccepted(request);
+    }
 }
