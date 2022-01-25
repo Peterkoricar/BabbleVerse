@@ -1,8 +1,11 @@
 package com.babbleverse.user;
 
 import com.babbleverse.request.Request;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,15 +17,17 @@ public class User {
     private String password;
     @ManyToMany
     @Column(name = "friends")
-    private List<User> friends;
+    private List<User> friends = new ArrayList<>();
 
     @OneToMany
+    @JsonIgnore
     @Column(name = "sent_requests")
-    private List<Request> sentRequests;
+    private List<Request> sentRequests = new ArrayList<>();
 
     @OneToMany
+    @JsonIgnore
     @Column(name = "received_requests")
-    private List<Request> receivedRequests;
+    private List<Request> receivedRequests = new ArrayList<>();
 
 
     public User(String name, String password) {

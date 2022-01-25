@@ -16,7 +16,7 @@ public class RequestController {
 
     @PostMapping("/newRequest")
     private Request createRequest(@RequestBody Request request){
-        return requestService.createNewRequest(request.getSender(),request.getReceiver(),request.getRequestType());
+        return requestService.createNewRequest(request);
     }
 
     private void sendRequest(@RequestBody Request request){
