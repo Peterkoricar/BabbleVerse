@@ -27,6 +27,7 @@ public class RequestServiceImpl implements RequestService{
     public Request createNewRequest(Request request) {
         request.setSender(userService.getCurrentUser());
         request.getSender().addSentRequest(request);
+        request.setReceiver(userService.getUser(request.getReceiver().getId()));
         request.getReceiver().addReceivedRequest(request);
         return requestRepository.save(request);
     }

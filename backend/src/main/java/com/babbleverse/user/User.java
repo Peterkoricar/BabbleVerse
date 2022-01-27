@@ -15,18 +15,20 @@ public class User {
     private long id;
     private String name;
     private String password;
-    @ManyToMany
-    @Column(name = "friends")
+
+    //https://stackoverflow.com/questions/1656113/hibernate-recursive-many-to-many-association-with-the-same-entity
+    @ManyToMany(mappedBy = "id")
     private List<User> friends = new ArrayList<>();
 
-    @OneToMany
+
     @JsonIgnore
     @Column(name = "sent_requests")
+    @OneToMany(mappedBy = "sender")
     private List<Request> sentRequests = new ArrayList<>();
 
-    @OneToMany
     @JsonIgnore
     @Column(name = "received_requests")
+    @OneToMany(mappedBy = "receiver")
     private List<Request> receivedRequests = new ArrayList<>();
 
 

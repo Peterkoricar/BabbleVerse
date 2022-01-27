@@ -1,6 +1,7 @@
 package com.babbleverse.request;
 
 import com.babbleverse.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -12,22 +13,24 @@ public class Request {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id",insertable = false, updatable=false)
+    @JoinColumn(name = "sender_id", nullable = false)
     private User sender;
     @ManyToOne
-    @JoinColumn(name = "user_id",insertable = false, updatable=false)
+    @JoinColumn(name = "receiver_id", nullable = false)
     private User receiver;
+
 
     @Column(name = "request_type")
     private RequestType requestType;
 
     @Column(name = "request_is_active")
-    private boolean requestIsActive;
+    private boolean requestIsActive = true;
 
-    public Request(RequestType requestType) {
+    public Request(RequestType requestType ) {
         this.requestType = requestType;
-        requestIsActive = true;
     }
+
+    public Request(){ }
 
     public RequestType getRequestType() {
         return requestType;
