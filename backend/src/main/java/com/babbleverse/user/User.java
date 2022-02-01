@@ -17,8 +17,13 @@ public class User {
     private String password;
 
     //https://stackoverflow.com/questions/1656113/hibernate-recursive-many-to-many-association-with-the-same-entity
-    @ManyToMany(mappedBy = "id")
+    @ManyToMany
+    @JoinColumn(name="friendId")
     private List<User> friends = new ArrayList<>();
+
+    @ManyToMany
+    @JoinColumn(name="personId")
+    private List<User> friendOf = new ArrayList<>();
 
 
     @JsonIgnore
@@ -102,5 +107,12 @@ public class User {
         receivedRequests.add(request);
     }
 
+    public List<User> getFriendOf() {
+        return friendOf;
+    }
+
+    public void setFriendOf(List<User> friendOf) {
+        this.friendOf = friendOf;
+    }
 }
 

@@ -13,4 +13,6 @@ public interface UserService {
     User getCurrentUser();
     Optional<User> findUserByName(String name);
     List<User> listAll(String keyword);
+
+    void saveAll(List<User> users);
 }

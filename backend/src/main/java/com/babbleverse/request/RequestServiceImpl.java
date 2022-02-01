@@ -5,6 +5,8 @@ import com.babbleverse.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Optional;
 @Component
 public class RequestServiceImpl implements RequestService{
@@ -39,8 +41,17 @@ public class RequestServiceImpl implements RequestService{
             case groupInvite:
 
             case friendRequest:
-                if (request.getReceiver().equals(userService.getCurrentUser()))
-                    request.getSender().addFriend(request.getReceiver());
+                if (request.getReceiver().equals(userService.getCurrentUser())) {
+                    request.getSender().getFriends().add(request.getReceiver());
+                    request.getReceiver().getFriendOf().add(request.getSender());
+                    
+                    var users = new ArrayList<User>();
+
+                    users.add(request.getSender());
+                    users.add(request.getReceiver());
+
+                    userService.saveAll(users);
+                }
         }
     }
 
