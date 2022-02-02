@@ -58,4 +58,8 @@ public class UserServiceImpl implements com.babbleverse.user.UserService {
         }
         return userRepository.findAll();
     }
+    @Override
+    public void saveAll(List<User> users) {
+        userRepository.saveAll(users);
+    }
 }

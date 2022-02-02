@@ -1,4 +1,6 @@
 package com.babbleverse.request;
 
-public interface RequestRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface RequestRepository extends CrudRepository<Request,Long> {
 }

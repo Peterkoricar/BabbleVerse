@@ -16,17 +16,15 @@ public class MessageController {
 
     }
 */
-    private final SimpMessagingTemplate template;
+    private MessageService serv;
 
-    @Autowired
-    MessageController(SimpMessagingTemplate template){
-        this.template = template;
+    public MessageController(MessageService serv) {
+        this.serv = serv;
     }
 
     @MessageMapping("/send/message")
     public void sendMessage(String message){
-        System.out.println(message);
-        this.template.convertAndSend("/message",  message);
+        serv.sendMessage(message);
     }
 }
 

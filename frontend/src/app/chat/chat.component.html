@@ -1,4 +1,4 @@
-<mat-card class="chat">
+<mat-card class="chat" cdkDrag>
     <p>
       <mat-toolbar class="head">
       <span>Chat</span>
@@ -13,7 +13,6 @@
     </p>
     <div style="height:205px;padding: 15px 0px;border:none;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
       <div class="content">
-        <div class="username">{{ appService.username }}</div>
         <div class="message" *ngFor="let msg of messageService.msg">
           {{msg}}
         </div>

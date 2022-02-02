@@ -37,7 +37,7 @@ public class UserController {
     public User user(Principal user) {
         return new User(user.getName(), null);
     }
-    @GetMapping("/finduser")
+    @GetMapping("/findUser")
     public Optional<User> findUserByName(@PathVariable String name){
         return userService.findUserByName(name);
 
