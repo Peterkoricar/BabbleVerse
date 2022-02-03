@@ -40,6 +40,5 @@ public class UserController {
     @GetMapping("/search")
     public List<User> searchUsers(@RequestParam String name){
         return userService.listAll(name);
-
     }
 }

@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.users$ = this.searchTerms.pipe(
+      this.users$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
       switchMap((term: string) => this.appService.searchUsers(term)),
