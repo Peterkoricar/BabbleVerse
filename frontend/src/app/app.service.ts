@@ -70,6 +70,6 @@ export class AppService {
     if (!term.trim()) {
       return of([]);
     }
-    return this.http.get<User[]>(`${this.appUrl}/?name=${term}`)
+    return this.http.get<User[]>(`${this.appUrl}search?name=${term}`)
   }  
 }

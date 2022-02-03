@@ -37,17 +37,9 @@ public class UserController {
     public User user(Principal user) {
         return new User(user.getName(), null);
     }
-    @GetMapping("/finduser")
-    public Optional<User> findUserByName(@PathVariable String name){
-        return userService.findUserByName(name);
+    @GetMapping("/search")
+    public List<User> searchUsers(@RequestParam String name){
+        return userService.listAll(name);
 
-    }
-    @RequestMapping("/")
-    public String viewHomePage(Model model, @Param("keyword") String keyword) {
-        List<User> listUsers = userService.listAll(keyword);
-        model.addAttribute("listUsers", listUsers);
-        model.addAttribute("keyword", keyword);
-
-        return "index";
     }
 }
