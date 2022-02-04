@@ -1,14 +1,19 @@
 package com.babbleverse.user;
 
 import com.babbleverse.security.UserExistException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.babbleverse.user.UserService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements com.babbleverse.user.UserService {
     private final PasswordEncoder passwordEncoder;
+    @Autowired
     private final UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
@@ -21,10 +26,7 @@ public class UserServiceImpl implements com.babbleverse.user.UserService {
         return userRepository.findById(id).get();
     }
 
-    @Override
-    public User getUserByName(String s) {
-        return userRepository.findByname(s).orElseThrow();
-    }
+
 
     @Override
     public boolean nameExist(User user) {
@@ -43,5 +45,21 @@ public class UserServiceImpl implements com.babbleverse.user.UserService {
         String name = SecurityContextHolder.getContext().getAuthentication().getName();
         return userRepository.findByname(name).orElseThrow();
 
+    }
+    @Override
+    public Optional<User> findUserByName(String name){
+        return userRepository.findByname(name);
+
+    }
+    @Override
+    public List<User> listAll(String keyword) {
+        if (keyword != null) {
+            return userRepository.search(keyword);
+        }
+        return userRepository.findAll();
+    }
+    @Override
+    public void saveAll(List<User> users) {
+        userRepository.saveAll(users);
     }
 }

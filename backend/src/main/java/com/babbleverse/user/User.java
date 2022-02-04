@@ -1,8 +1,11 @@
 package com.babbleverse.user;
 
 import com.babbleverse.request.Request;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,17 +15,26 @@ public class User {
     private long id;
     private String name;
     private String password;
+
+    //https://stackoverflow.com/questions/1656113/hibernate-recursive-many-to-many-association-with-the-same-entity
     @ManyToMany
-    @Column(name = "friends")
-    private List<User> friends;
+    @JoinColumn(name="friendId")
+    private List<User> friends = new ArrayList<>();
 
-    @OneToMany
+    @ManyToMany
+    @JoinColumn(name="personId")
+    private List<User> friendOf = new ArrayList<>();
+
+
+    @JsonIgnore
     @Column(name = "sent_requests")
-    private List<Request> sentRequests;
+    @OneToMany(mappedBy = "sender")
+    private List<Request> sentRequests = new ArrayList<>();
 
-    @OneToMany
+    @JsonIgnore
     @Column(name = "received_requests")
-    private List<Request> receivedRequests;
+    @OneToMany(mappedBy = "receiver")
+    private List<Request> receivedRequests = new ArrayList<>();
 
 
     public User(String name, String password) {
@@ -95,5 +107,12 @@ public class User {
         receivedRequests.add(request);
     }
 
+    public List<User> getFriendOf() {
+        return friendOf;
+    }
+
+    public void setFriendOf(List<User> friendOf) {
+        this.friendOf = friendOf;
+    }
 }
 

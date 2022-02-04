@@ -1,39 +1,9 @@
-.chat{
-    width: 250px;
-    height: 250px;
-    margin: auto;
-    margin-top: 130px;
-    padding-top: 50px;
-    padding-bottom: 65px;
-    padding-left: 75px;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    border-color: rgb(31, 169, 224);
-}
-.head{
-    background-color: rgb(31, 169, 224);
-    border-radius: 10px;
-    width: 341px;
-    margin-left: -75px;
-    margin-top: -50px;
-    color: white;
-    
-}
-.heel{
-    background-color: rgb(31, 169, 224);
-    border-radius: 10px;
-    width: 341px;
-    height: 50px;
-    margin-left: -75px;
-    margin-bottom: -300px;
-}
-.btn{
-    color: white;
-    cursor: pointer;
-}
-.chatsend{
+.friends{
+    margin-left: 1219px; /* pc:1619px nt:1219px*/
+    margin-top: -590px;
+    height: 880px;
     width: 300px;
-    border: none;
-    border-radius: 8px;
-    height: 25px;
+    background-color: whitesmoke;
+    border-color: rgb(31, 169, 224) solid 5px;
+    border-radius: 20px;
 }

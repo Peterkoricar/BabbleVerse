@@ -8,7 +8,7 @@ import java.util.Optional;
 @Service
 public interface RequestService {
      Optional<Request> getRequestInfo(Long id);
-     Request createNewRequest(User sender, User receiver,RequestType requestType);
+     Request createNewRequest(Request request);
      void requestAccepted(Request request);
      void requestRejected(Request request);
 
