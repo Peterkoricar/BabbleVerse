@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
 import { CustomMaterialModule } from './material.module';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ChatComponent } from './chat/chat.component';
+import { AuthInterceptor } from './auth.interceptor';
 import { ProfilpageComponent } from './profilpage/profilpage.component';
 
 @NgModule({
@@ -41,7 +42,9 @@ import { ProfilpageComponent } from './profilpage/profilpage.component';
     CustomMaterialModule ,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
