@@ -19,8 +19,6 @@ export class AuthInterceptor implements HttpInterceptor {
     if (token) {
       request = request.clone({ setHeaders: { Authorization: token } });
     }
-
-    // TODO: copy from appslab-2
     return next.handle(request);
   }
 }
