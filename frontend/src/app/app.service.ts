@@ -55,7 +55,7 @@ export class AppService {
   }
 
   logout(): void {
-    //this.token = null;
+    this.token = null;
   }
 
   register(user : User): Observable<any> {
@@ -82,7 +82,7 @@ export class AppService {
     }
 
     getUser(id: number): Observable<User> {
-      const url = `${this.usersUrl}/${id}`;
+      const url = `${this.appUrl}/${id}`;
       return this.http.get<User>(url);
     }
 }
