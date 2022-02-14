@@ -1,0 +1,78 @@
+.account{
+    height: 500px;
+    width: 730px;
+    margin: 0px auto;
+    background-color: rgb(31, 169, 224);
+    border-radius: 10px;
+    margin-top: 130px;
+    margin-bottom: 50px;
+}
+
+.profilimg{
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.username{
+    color: white;
+    font-size: xx-large;
+    margin-left: 350px;
+    margin-top: -220px;
+
+}
+
+.typ{
+    margin-left: 300px;
+    margin-top: 40px;
+}
+
+.name{
+    color: white;
+    margin-left: 375px;
+    margin-top: -23px;
+    font-size: x-large;
+}
+
+.password{
+    color: white;
+    margin-left: 400px;
+    margin-top: -23px;
+    font-size: x-large;
+}
+
+.text{
+    margin-top: 50px;
+}
+
+.list{
+    margin-left: 650px;
+    margin-top: -200px;
+}
+
+.usergroups{
+    margin-top: -90px;
+    margin-left: 450px;
+}
+
+button{
+    position: absolute;
+    margin-left: 1150px;
+    margin-top: -200px;
+    color: black;
+    background-color: white;
+}
+
+button:hover{
+    color: white;
+    background-color: black;
+}
+
+.friendimg{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.groupimg{
+    margin-top: 0px;
+    margin-left: 450px;
+}

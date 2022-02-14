@@ -80,4 +80,9 @@ export class AppService {
         this.http.post<Request>(`${this.appUrl}newRequest`, request)
       })
     }
+
+    getUser(id: number): Observable<User> {
+      const url = `${this.usersUrl}/${id}`;
+      return this.http.get<User>(url);
+    }
 }

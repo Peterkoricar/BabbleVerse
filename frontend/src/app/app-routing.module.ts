@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ChatComponent } from './chat/chat.component';
 import { ProfilpageComponent } from './profilpage/profilpage.component';
+import { RequestpageComponent } from './requestpage/requestpage.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'profilpage', component: ProfilpageComponent },
+  { path: 'requestpage/:id', component: RequestpageComponent },
 ];
 
 @NgModule({

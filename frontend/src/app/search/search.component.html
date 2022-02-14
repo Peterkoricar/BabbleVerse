@@ -9,7 +9,7 @@
   
     <ul class="search-result">
       <li *ngFor="let user of users$ | async" >
-        <a>
+        <a routerLink="/requestpage/{{user.id}}">
           {{user.name}}
         </a>
       </li>

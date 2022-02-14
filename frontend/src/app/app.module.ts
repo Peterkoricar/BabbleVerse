@@ -18,6 +18,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ChatComponent } from './chat/chat.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { ProfilpageComponent } from './profilpage/profilpage.component';
+import { RequestpageComponent } from './requestpage/requestpage.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProfilpageComponent } from './profilpage/profilpage.component';
     SearchComponent,
     ProfilComponent,
     ChatComponent,
-    ProfilpageComponent
+    ProfilpageComponent,
+    RequestpageComponent
   ],
   imports: [
     BrowserModule,

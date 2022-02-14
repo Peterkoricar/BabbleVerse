@@ -1,0 +1,24 @@
+<div style="height: 648px;">
+    <app-profil></app-profil>
+    <div class="account">
+        <img src="assets/profil.png" alt="Profil" width="170" height="170" class="profilimg">
+        <div ngIf="user" >
+            <div class="username"><strong>{{user.name}} profil</strong></div>
+            <div class="text">
+                <div class="typ"><strong>Name:</strong></div>
+                <div class="name">{{user.name}}</div>
+                <div class="typ"><strong>E-mail:</strong></div>
+                <div class="password"></div>  <!--{{user.email}}-->
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <div class="userfriedns"><strong>Friends:</strong></div>
+        <img src="assets/friend1.png" alt="Friends" width="60" height="60" class="friendimg">
+        <img src="assets/friend2.png" alt="Friends" width="60" height="60" class="friendimg">
+        <img src="assets/friend3.png" alt="Friends" width="60" height="60" class="friendimg">
+        <div class="usergroups"><strong>Groups:</strong></div>
+        <img src="assets/group.png" alt="Group" width="80" height="80" class="groupimg">
+    </div>
+    <button mat-raised-button>Send request</button>
+</div>
