@@ -40,6 +40,7 @@ public class RequestServiceImpl implements RequestService{
         switch (request.getRequestType()){
             case groupInvite:
 
+
             case friendRequest:
                 if (request.getReceiver().equals(userService.getCurrentUser())) {
                     request.getSender().getFriends().add(request.getReceiver());

@@ -1,5 +1,6 @@
 package com.babbleverse.user;
 
+import com.babbleverse.group.Group;
 import com.babbleverse.request.Request;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -15,6 +16,8 @@ public class User {
     private long id;
     private String name;
     private String password;
+    @ManyToMany
+    private List<Group> groups;
 
     //https://stackoverflow.com/questions/1656113/hibernate-recursive-many-to-many-association-with-the-same-entity
     @ManyToMany
@@ -113,6 +116,14 @@ public class User {
 
     public void setFriendOf(List<User> friendOf) {
         this.friendOf = friendOf;
+    }
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
     }
 }
 

@@ -1,4 +1,4 @@
-package com.babbleverse.Message;
+package com.babbleverse.message;
 
 
 import com.babbleverse.user.User;

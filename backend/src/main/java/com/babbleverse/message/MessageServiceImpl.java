@@ -1,4 +1,4 @@
-package com.babbleverse.Message;
+package com.babbleverse.message;
 
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
