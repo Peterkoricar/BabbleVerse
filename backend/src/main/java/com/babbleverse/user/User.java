@@ -22,6 +22,7 @@ public class User {
     private List<User> friends = new ArrayList<>();
 
     @ManyToMany
+    @JsonIgnore // stackoverflow zabranilo ale neviem či pojdu requesty
     @JoinColumn(name="personId")
     private List<User> friendOf = new ArrayList<>();
 
