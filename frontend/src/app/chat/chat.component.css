@@ -1,6 +1,7 @@
 .chat{
     width: 250px;
     height: 250px;
+    z-index: +2;
     margin: auto;
     margin-top: 130px;
     padding-top: 50px;

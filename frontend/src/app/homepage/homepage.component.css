@@ -1,7 +1,8 @@
 .friends{
-    margin-left: 1619px; /* pc:1619px nt:1219px*/
-    margin-top: -590px;
-    height: 880px;
+    position: relative;
+    margin-top: -500px;
+    display: inline-block;
+    height: 740px;
     width: 300px;
     background-color: whitesmoke;
     border-color: rgb(31, 169, 224) solid 5px;

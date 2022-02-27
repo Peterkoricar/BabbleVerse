@@ -1,10 +1,13 @@
 .search{
     position: absolute;
-    margin-top: -205px;
-    margin-left: 1650px; /*pc: 1650px, nb: 1250px */
+    display: inline;
+    margin-top: -130px;
+    margin-left: -250px;
+    z-index: +1;
 }
 
 h4{
+    text-align: left;
     color: rgb(31, 169, 224);
     margin-bottom: 0px;
 }
@@ -29,6 +32,7 @@ h4{
     color: black;
     display: block;
     text-decoration: none;
+    text-align: left;
     margin-left: 5px;
     padding: 5px 0px;
 }
