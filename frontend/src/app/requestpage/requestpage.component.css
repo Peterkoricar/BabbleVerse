@@ -45,13 +45,16 @@
 }
 
 .list{
-    margin-left: 650px;
+    position: relative;
     margin-top: -200px;
+    margin-left: -450px;
+    display: block;
+    text-align: center;
 }
 
 .usergroups{
     margin-top: -90px;
-    margin-left: 450px;
+    margin-left: 800px;
 }
 
 button{
@@ -74,5 +77,10 @@ button:hover{
 
 .groupimg{
     margin-top: 0px;
-    margin-left: 450px;
+    margin-left: 800px;
+}
+
+.sendbtn{
+    margin: 0px auto;
+    margin-top: -100px;
 }
