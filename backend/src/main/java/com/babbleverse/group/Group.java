@@ -17,10 +17,12 @@ public class Group {
     private List<User> members;
     private List<Message> messages;
 
-    protected Group (long id, List<User> members, List<Message> messages){
-        this.id = id;
-        this.members = members;
-        this.messages = messages;
+    private String groupName;
+    private User creator;
+
+    protected Group (User creator, String groupName){
+        this.creator = creator;
+        this.groupName = groupName;
     }
 
     public Group(){}
@@ -48,5 +50,25 @@ public class Group {
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public User getCreator() {
+        return creator;
+    }
+
+    public void setCreator(User creator) {
+        this.creator = creator;
+    }
+
+    public void addUser(User user){
+        members.add(user);
     }
 }
