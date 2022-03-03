@@ -1,6 +1,7 @@
 package com.babbleverse.message;
 
 
+import com.babbleverse.group.Group;
 import com.babbleverse.user.User;
 
 import javax.persistence.*;
@@ -18,6 +19,9 @@ public class Message {
     private User user;
     @Column(name = "user_id")
     private long  userId;
+    @ManyToOne
+    @JoinColumn(name = "groupId")
+    private Group group;
 
 
     protected Message(long id, String message, String sender) {
@@ -68,5 +72,13 @@ public class Message {
 
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 }

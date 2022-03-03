@@ -14,10 +14,16 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @ManyToMany
+    @Column(name = "groups")
     private List<User> members;
+
+    @OneToMany
     private List<Message> messages;
 
     private String groupName;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
     private User creator;
 
     protected Group (User creator, String groupName){
@@ -71,4 +77,6 @@ public class Group {
     public void addUser(User user){
         members.add(user);
     }
+
+
 }

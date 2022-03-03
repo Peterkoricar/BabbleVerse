@@ -17,8 +17,11 @@ public class User {
     private String name;
     private String password;
     @ManyToMany
+    @JoinColumn(name = "groupsId")
     private List<Group> groups;
 
+    @OneToMany
+    private List<User> owner;
     //https://stackoverflow.com/questions/1656113/hibernate-recursive-many-to-many-association-with-the-same-entity
     @ManyToMany
     @JoinColumn(name="friendId")
@@ -124,6 +127,14 @@ public class User {
 
     public void setGroups(List<Group> groups) {
         this.groups = groups;
+    }
+
+    public List<User> getOwner() {
+        return owner;
+    }
+
+    public void setOwner(List<User> owner) {
+        this.owner = owner;
     }
 }
 
