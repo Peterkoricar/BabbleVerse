@@ -8,13 +8,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="Groups")
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @ManyToMany
-    @Column(name = "groups")
     private List<User> members;
 
     @OneToMany
@@ -23,7 +21,7 @@ public class Group {
     private String groupName;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
     private User creator;
 
     protected Group (User creator, String groupName){

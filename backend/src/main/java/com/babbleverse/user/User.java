@@ -17,7 +17,7 @@ public class User {
     private String name;
     private String password;
     @ManyToMany
-    @JoinColumn(name = "groupsId")
+    @JoinColumn(name = "groups_id")
     private List<Group> groups;
 
     @OneToMany

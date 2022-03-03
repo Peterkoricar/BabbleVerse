@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 public class GroupServiceImpl implements GroupService{
 
     GroupRepository groupRepository;
-    Group group;
-    User user;
+
+    public GroupServiceImpl(GroupRepository groupRepository) {
+        this.groupRepository = groupRepository;
+    }
 
     @Override
     public void createGroup(Group group) {
@@ -18,7 +20,7 @@ public class GroupServiceImpl implements GroupService{
 
     @Override
     public void removeGroup(long id) {
-        groupRepository.deleteById(group.getId());
+        groupRepository.deleteById(id);
     }
 
     @Override

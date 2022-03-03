@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class GroupController {
         private GroupService groupService;
 
+        public GroupController(GroupService groupService) {
+                this.groupService = groupService;
+        }
 
-        @RequestMapping("/creategroup")
+        @RequestMapping("/createGroup")
         public void createGroup(@RequestBody Group group){
                 groupService.createGroup(group);
         }
