@@ -8,6 +8,7 @@ h1{
     position: absolute;
     margin-top: 0px;
     margin-left: -240px;
+    z-index: +5;
 }
 
 .head{
